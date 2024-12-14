@@ -4,7 +4,10 @@ from src.solutions import day1Solution
 
 # Defining main function
 def main():
-    print(day1Solution.solution())
+    print("Welcome to my Advent of Code Program")
+
+    day1Solution.solution()
+
 
 # Using the special variable
 # __name__

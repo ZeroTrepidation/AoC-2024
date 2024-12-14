@@ -1,7 +1,8 @@
 def solution():
+    print("Total Distance: {}, Similarity Score {}".format(solutionPart1(), solutionPart2()))
 
-    print("Welcome to my Advent of Code Program")
 
+def solutionPart1():
     filepath = "../resources/inputs/day1_input.txt"
 
     lines = open(filepath)
@@ -24,3 +25,33 @@ def solution():
         totalDistance += abs(int(array1[i]) - int(array2[i]))
 
     return totalDistance
+
+
+def solutionPart2():
+    filepath = "../resources/inputs/day1_input.txt"
+
+    lines = open(filepath)
+
+    leftNumbers = []
+    rightDict = {}
+
+    for line in lines:
+        row = line.split()
+        r = row[1]
+
+        leftNumbers.append(row[0])
+        if rightDict.keys().__contains__(r):
+            rightDict[r] = rightDict[r] + 1
+        else:
+            rightDict[r] = 1
+
+    similarityScore = 0
+
+    for i in range(len(leftNumbers)):
+        search = leftNumbers[i]
+        if rightDict.keys().__contains__(search):
+            freq = rightDict[search]
+
+            similarityScore += int(search) * int(freq)
+
+    return similarityScore
