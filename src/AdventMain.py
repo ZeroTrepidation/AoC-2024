@@ -1,12 +1,11 @@
-import solutions.day1Solution
-from src.solutions import day1Solution
+from src.solutions import day2Solution
 
 
 # Defining main function
 def main():
     print("Welcome to my Advent of Code Program")
 
-    day1Solution.solution()
+    day2Solution.solution()
 
 
 # Using the special variable

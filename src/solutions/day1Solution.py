@@ -5,16 +5,16 @@ def solution():
 def solutionPart1():
     filepath = "../resources/inputs/day1_input.txt"
 
-    lines = open(filepath)
-
     array1 = []
     array2 = []
 
-    for line in lines:
-        row = line.split()
+    with open(filepath) as file:
 
-        array1.append(row[0])
-        array2.append(row[1])
+        for line in file:
+            row = line.split()
+
+            array1.append(row[0])
+            array2.append(row[1])
 
     array1.sort()
     array2.sort()
@@ -30,20 +30,20 @@ def solutionPart1():
 def solutionPart2():
     filepath = "../resources/inputs/day1_input.txt"
 
-    lines = open(filepath)
-
     leftNumbers = []
     rightDict = {}
 
-    for line in lines:
-        row = line.split()
-        r = row[1]
+    with open(filepath) as file:
 
-        leftNumbers.append(row[0])
-        if rightDict.keys().__contains__(r):
-            rightDict[r] = rightDict[r] + 1
-        else:
-            rightDict[r] = 1
+        for line in file:
+            row = line.split()
+            r = row[1]
+
+            leftNumbers.append(row[0])
+            if rightDict.keys().__contains__(r):
+                rightDict[r] = rightDict[r] + 1
+            else:
+                rightDict[r] = 1
 
     similarityScore = 0
 
