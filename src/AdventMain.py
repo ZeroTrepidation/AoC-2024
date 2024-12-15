@@ -1,5 +1,5 @@
-from src.solutions import day2Solution
-from src.solutions import day1Solution
+from src.solutions import day1Solution, day2Solution, day3Solution
+
 
 
 # Defining main function
@@ -12,6 +12,8 @@ def main():
         print(day1Solution.solution())
     elif int(day) == 2:
         print(day2Solution.solution())
+    elif int(day) == 3:
+        print(day3Solution.solution())
     else:
         print("Invalid day selection")
 
